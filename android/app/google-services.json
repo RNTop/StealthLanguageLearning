@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "894664895475",
+    "project_id": "stealth-language-learnin-be5b8",
+    "storage_bucket": "stealth-language-learnin-be5b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894664895475:android:2eb52a159a1b5415d5c086",
+        "android_client_info": {
+          "package_name": "com.stealthlanguagelearning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "894664895475-socrsaf5l71auns4ni0uno2bloh5vfgb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXxI83WH3jukSmAt1KEpR9jij9IJ7lLdk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "894664895475-socrsaf5l71auns4ni0uno2bloh5vfgb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "894664895475-s40d1nf9329ukug1eopeetbdii4eg6eq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.StealthLanguageLearning"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

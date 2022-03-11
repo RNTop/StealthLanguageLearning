@@ -54,7 +54,9 @@ export const CheckResultAnimation = ({
           : `Answer: ${exerciseInfo.exercise?.correctWord}`}
       </Text>
       <CustomButton
-        onPress={resetExercise}
+        onPress={() => {
+          resetExercise();
+        }}
         bgColor={Colors.white}
         textColor={color}
       />

@@ -1,18 +1,19 @@
-export const getExercises = () => {
-  return [
-    {
-      englishSentence: 'The house is small.',
-      germanSentence: 'Das @word ist klein.',
-      highlight: 'house',
-      correctWord: 'Hause',
-      words: ['folgen', 'Schaf', 'Bereiden', 'Hause'],
-    },
-    {
-      englishSentence: 'Your skills are good',
-      germanSentence: 'Deine Fähigkeiten sind @word',
-      highlight: 'good',
-      correctWord: 'gut',
-      words: ['gut', 'schlecht', 'ernst', 'schwer'],
-    },
-  ];
+import firestore from '@react-native-firebase/firestore';
+import {IExercise} from '../../models';
+import _ from 'lodash';
+
+export const getExercises = async () => {
+  const res: any = await firestore().collection('Exercises').get();
+  const exercises: IExercise[] = [];
+  res.forEach((element: {data(): IExercise}) => {
+    exercises.push(element.data());
+  });
+  return _.orderBy(
+    exercises.map(i => ({
+      ...i,
+      random: Math.floor(Math.random() * exercises.length + 1),
+    })),
+    ['random'],
+    ['asc'],
+  );
 };

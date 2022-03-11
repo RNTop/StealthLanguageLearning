@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {ActivityIndicator, StyleSheet} from 'react-native';
 import {Colors, Text, View} from 'react-native-ui-lib';
 import {MainContainer} from '../../components';
 import {CustomButton} from '../../components/button';
@@ -10,14 +10,27 @@ import {PreDefinedWords} from './components/PreDefinedWords';
 import {IUseExercise} from './hooks';
 
 export interface IHomeScreen {
+  loading: boolean;
+  finished: boolean;
   exerciseInfo: IUseExercise;
-  resetExercise: () => void;
+  resetExercise: (data?: undefined) => void;
 }
 
-const HomeScreen = ({exerciseInfo, resetExercise}: IHomeScreen) => {
+const HomeScreen = ({
+  exerciseInfo,
+  finished,
+  loading,
+  resetExercise,
+}: IHomeScreen) => {
   return (
     <MainContainer noBottomPadding>
-      {exerciseInfo.exercise && (
+      {(loading || finished) && (
+        <View style={styles.loading} center>
+          {loading && <ActivityIndicator size={'large'} />}
+          {finished && <Text h3>{STRINGS.homeScreen.successMessage}</Text>}
+        </View>
+      )}
+      {!loading && !finished && exerciseInfo && exerciseInfo.exercise && (
         <View style={styles.main} bg-cardBg>
           <View style={styles.top}>
             <Text small white center>
@@ -56,6 +69,9 @@ const HomeScreen = ({exerciseInfo, resetExercise}: IHomeScreen) => {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
+  loading: {
+    flex: 1,
+  },
   main: {
     flex: 1,
     marginTop: 70,

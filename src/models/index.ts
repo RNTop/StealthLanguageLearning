@@ -6,4 +6,5 @@ export interface IExercise {
   highlight: string;
   correctWord: string;
   words: string[];
+  random?: number;
 }
