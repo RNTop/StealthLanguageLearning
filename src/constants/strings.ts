@@ -1,3 +1,8 @@
 export const STRINGS = {
-  product: 'PRODUCT',
+  homeScreen: {
+    description: 'Fill in the missing word',
+  },
+  button: {
+    continue: 'Continue',
+  },
 };

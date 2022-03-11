@@ -1,4 +1,7 @@
 export const COLORS = {
+  background: '#8ed8fa',
+  cardBg: '#476b80',
+  button: '#6d90a0',
   dark: '#1a1b24',
   lightDark: '#242534',
   white: '#ffffff',
@@ -6,8 +9,4 @@ export const COLORS = {
   label: '#999999',
   text: '#cccccc',
   error: '#D20001',
-  blinkRed: '#324c45',
-  blinkGreen: '#533134',
-  blinkRed1: '#324c45cc',
-  blinkGreen1: '#533134cc',
 };

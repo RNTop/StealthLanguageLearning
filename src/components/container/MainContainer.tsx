@@ -5,18 +5,24 @@ import {Colors, View} from 'react-native-ui-lib';
 
 interface IMainContainer {
   children: React.ReactNode;
+  noBottomPadding?: boolean;
 }
 
-export const MainContainer = ({children}: IMainContainer) => {
+export const MainContainer = ({
+  children,
+  noBottomPadding = false,
+}: IMainContainer) => {
   const insets = useSafeAreaInsets();
   return (
     <View
       style={[
         styles.container,
-        {paddingTop: insets.top + 20, paddingBottom: insets.bottom},
-      ]}
-    >
-      <StatusBar barStyle={'light-content'} backgroundColor={Colors.dark} />
+        !noBottomPadding && {paddingBottom: insets.bottom},
+      ]}>
+      <StatusBar
+        barStyle={'light-content'}
+        backgroundColor={Colors.background}
+      />
       {children}
     </View>
   );
@@ -25,6 +31,5 @@ export const MainContainer = ({children}: IMainContainer) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 20,
   },
 });

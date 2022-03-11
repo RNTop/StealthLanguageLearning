@@ -1,7 +1,3 @@
-interface IEnv {
+interface IEnv {}
 
-}
-
-export const ENV: IEnv = {
-
-};
+export const ENV: IEnv = {};

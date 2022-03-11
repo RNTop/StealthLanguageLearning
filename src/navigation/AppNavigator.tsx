@@ -15,11 +15,10 @@ export const AppNavigator = () => {
         screenOptions={{
           headerShown: false,
           cardStyle: {
-            backgroundColor: COLORS.dark,
+            backgroundColor: COLORS.background,
           },
         }}
-        initialRouteName={SCREENS.HOME}
-      >
+        initialRouteName={SCREENS.HOME}>
         <Stack.Screen name={SCREENS.HOME} component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
