@@ -13,12 +13,23 @@ export const MissingSentence = ({exerciseInfo}: IMissingSentence) => {
     <View style={styles.conatiner}>
       {exerciseInfo.exercise &&
         parseGermanWords(exerciseInfo.exercise.germanSentence).map(i => {
+          const {matched, selected} = exerciseInfo;
           if (i === '@word') {
-            if (exerciseInfo.selected) {
+            if (selected) {
               return (
-                <View key={i} style={styles.itemSelected} bg-white>
-                  <Text h5 darkGreen>
-                    {exerciseInfo.selected}
+                <View
+                  key={i}
+                  style={styles.itemSelected}
+                  backgroundColor={
+                    (matched === true && Colors.success) ||
+                    (matched === false && Colors.error) ||
+                    Colors.white
+                  }>
+                  <Text
+                    h5
+                    darkGreen={matched === undefined}
+                    white={matched !== undefined}>
+                    {selected}
                   </Text>
                 </View>
               );

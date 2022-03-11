@@ -9,7 +9,11 @@ interface IPreDefinedWords {
 
 export const PreDefinedWords = ({exerciseInfo}: IPreDefinedWords) => {
   return (
-    <View style={styles.conatiner}>
+    <View
+      style={[
+        styles.conatiner,
+        exerciseInfo.matched !== undefined && styles.checkResult,
+      ]}>
       {exerciseInfo.exercise?.words.map(i => {
         const selected = exerciseInfo.selected === i;
         return (
@@ -17,6 +21,7 @@ export const PreDefinedWords = ({exerciseInfo}: IPreDefinedWords) => {
             key={i}
             bg-white
             style={[styles.item, selected && {backgroundColor: Colors.button}]}
+            disabled={exerciseInfo.matched !== undefined}
             onPress={() => {
               exerciseInfo.setSelected(i);
             }}>
@@ -48,5 +53,8 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     marginHorizontal: 10,
     marginBottom: 20,
+  },
+  checkResult: {
+    opacity: 0.5,
   },
 });

@@ -16,8 +16,13 @@ const HomePresenter = () => {
     }
   }, [exerciseInfo]);
 
+  const resetExercise = () => {
+    exerciseInfo.setExercise(getExercises()[1]);
+  };
+
   const homeScreenProps: IHomeScreen = {
     exerciseInfo,
+    resetExercise,
   };
   return <HomeScreen {...homeScreenProps} />;
 };

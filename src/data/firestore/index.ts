@@ -9,7 +9,7 @@ export const getExercises = () => {
     },
     {
       englishSentence: 'Your skills are good',
-      germanSentence: 'Deine Fähigkeiten sind gut',
+      germanSentence: 'Deine Fähigkeiten sind @word',
       highlight: 'good',
       correctWord: 'gut',
       words: ['gut', 'schlecht', 'ernst', 'schwer'],

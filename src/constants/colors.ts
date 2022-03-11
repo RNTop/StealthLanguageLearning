@@ -8,5 +8,6 @@ export const COLORS = {
   black: '#000000',
   label: '#999999',
   text: '#cccccc',
-  error: '#D20001',
+  success: '#73e6e6',
+  error: '#f0938d',
 };

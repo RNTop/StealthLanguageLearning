@@ -4,5 +4,6 @@ export const STRINGS = {
   },
   button: {
     continue: 'Continue',
+    checkAnswer: 'Check Answer',
   },
 };

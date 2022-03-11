@@ -58,5 +58,6 @@ export const TYPOGRAPHIES = StyleSheet.create({
     fontSize: 16,
     lineHeight: 16,
     fontWeight: '700',
+    textTransform: 'uppercase',
   },
 });
